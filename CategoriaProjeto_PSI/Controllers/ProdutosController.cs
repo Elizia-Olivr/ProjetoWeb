@@ -8,7 +8,6 @@ using Modelo.Cadastro;
 using Modelo.Tabela;
 using System.Data.Entity;
 using System.Net;
-
 using Servico.Cadastros;
 using Servico.Tabelas;
 
@@ -52,6 +51,7 @@ namespace ProjetoWeb.Controllers
                 ViewBag.FabricanteId = new SelectList(fabricanteServico.ObterFabricantesClassificadosPorNome(),
                 "FabricanteId", "Nome", produto.FabricanteId);
             }
+
         }
 
         private ActionResult GravarProduto(Produto produto)
@@ -63,12 +63,15 @@ namespace ProjetoWeb.Controllers
                     produtoServico.GravarProduto(produto);
                     return RedirectToAction("Index");
                 }
+                PopularViewBag(produto);
                 return View(produto);
             }
+
             catch
             {
                 return View(produto);
             }
+
         }
 
         // GET: Produtos

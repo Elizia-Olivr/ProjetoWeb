@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="page-header ">
-                
+
                 <h1>
                     <span class="glyphicon glyphicon-hand-up"></span>
                     Elizia
@@ -32,7 +32,7 @@
                         @Html.ActionLink("Fabricantes", "Index", "Fabricantes")
                     </li>
                     <li id="liProdutos" role="presentation">
-                        @Html.ActionLink("Produtos", "Index","Produtos")
+                        @Html.ActionLink("Produtos", "Index", "Produtos")
                     </li>
                 </ul>
             </div>
@@ -50,5 +50,9 @@
     <script src="@Url.Content("~/scripts/jquery-1.9.1.js")"></script>
     <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
     @RenderSection("ScriptPage", false);
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")">
+    </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")">
+    </script>
 </body>
 </html>
